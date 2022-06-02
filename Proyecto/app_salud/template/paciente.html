@@ -1,0 +1,59 @@
+{% extends "principal.html" %}
+
+{% load static %} 
+
+
+{% block contenido %} 
+
+
+<h4 class="text-warning bg-dark"> Cargar Paciente </h4>
+  <form action="alta_paciente" method="POST" class="row">
+    {% csrf_token %} 
+    <div class="form-group col-lg-6">
+    <div class="input-group input-group-sm mb-3">
+      <span class="input-group-text " id="inputGroup-sizing-sm">Apellido</span>
+      <input type="text" class="form-control text-uppercase" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="apellido" required>
+    </div>
+  </div>
+  <div class="form-group col-lg-6">
+    <div class="input-group input-group-sm mb-3 ">
+      <span class="input-group-text" id="inputGroup-sizing-sm">Nombres</span>
+      <input type="text" class="form-control text-uppercase" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="nombre" required>
+    </div>
+  </div>
+  <div class="form-group col-lg-4">
+    <div class="input-group input-group-sm mb-3">
+      <span class="input-group-text" id="inputGroup-sizing-sm">N° Documento</span>
+      <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="dni" required>
+    </div>
+    </div>
+    <div class="form-group col-lg-3">
+    <div class="input-group input-group-sm mb-3 ">
+      <span class="input-group-text" id="inputGroup-sizing-sm">Fecha Nacimiento</span>
+      <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="nacimiento" required>
+    </div>
+  </div>
+  <div class="form-group col-lg-5">
+    <div class="input-group input-group-sm mb-3">
+      <span class="input-group-text" id="inputGroup-sizing-sm">Obra Social</span>
+      <input type="text" class="form-control text-uppercase" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="obra" required>
+    </div>
+    </div>
+    <div class="form-group col-lg-4">
+    <div class="input-group input-group-sm mb-3">
+      <span class="input-group-text" id="inputGroup-sizing-sm">N° Afiliado</span>
+      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="afiliado" required>
+    </div>
+    </div>
+    <div class="form-group col-lg-5">
+    <div class="input-group input-group-sm mb-3">
+      <span class="input-group-text" id="inputGroup-sizing-sm">@</span>
+      <input type="text" class="form-control text-lowercase" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="email" >
+    </div>   
+    </div>
+    <div class="input-group input-group-sm mb-3">
+    <input type="submit" class="btn btn-danger" value="Guardar">
+      </div>
+  </form>
+
+{% endblock %} 

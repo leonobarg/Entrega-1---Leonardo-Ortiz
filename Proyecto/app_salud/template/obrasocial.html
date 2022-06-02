@@ -1,0 +1,42 @@
+{% extends "principal.html" %}
+
+{% load static %} 
+
+
+{% block contenido %} 
+
+
+<h4 class="text-danger bg-info"> Cargar Obra Social </h4>
+  <form action="alta_OS" method="POST" class="row">
+    {% csrf_token %} 
+    <div class="form-group col-lg-6">
+    <div class="input-group input-group-sm mb-3">
+      <span class="input-group-text " id="inputGroup-sizing-sm">Nombre Obra Social</span>
+      <input type="text" class="form-control text-uppercase" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="nombre" required>
+    </div>
+  </div>
+  <div class="form-group col-lg-6">
+    <div class="input-group input-group-sm mb-3 ">
+      <span class="input-group-text" id="inputGroup-sizing-sm">Domicilio</span>
+      <input type="text" class="form-control text-uppercase" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="direccion" required>
+    </div>
+  </div>
+  <div class="form-group col-lg-4">
+    <div class="input-group input-group-sm mb-3">
+      <span class="input-group-text" id="inputGroup-sizing-sm">Email</span>
+      <input type="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="email" >
+    </div>
+    </div>
+    <div class="form-group col-lg-3">
+    <div class="input-group input-group-sm mb-3 ">
+      <span class="input-group-text" id="inputGroup-sizing-sm">N° CUIT</span>
+      <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="cuit" required>
+    </div>
+  </div>
+  
+    <div class="input-group input-group-sm mb-3">
+    <input type="submit" class="btn btn-danger" value="Guardar">
+      </div>
+  </form>
+
+{% endblock %} 

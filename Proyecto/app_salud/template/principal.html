@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Proyecto Final - App Salud</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'app_salud/css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="{% url 'inicio' %}">App_Salud</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          
+              <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle btn btn-primary" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Paciente</a>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="{% url 'alta_paciente' %}">Alta</a>
+                          <a class="dropdown-item" href="{% url 'buscar_pac' %}">Buscar</a>
+                          <a class="dropdown-item" href="{% url 'lista_pac' %}">Listado</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Edición</a>
+                        </div>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle btn btn-primary" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Médicos</a>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="{% url 'alta_medico' %}">Alta</a>
+                          <a class="dropdown-item" href="{% url 'buscar_medico' %}">Buscar</a>
+                          <a class="dropdown-item" href="{% url 'lista_medico' %}">Listado</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Edición</a>
+                        </div>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle btn btn-primary" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Obra Social</a>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="{% url 'alta_OS' %}">Alta</a>
+                          <a class="dropdown-item" href="{% url 'buscar_OS' %}">Buscar</a>
+                          <a class="dropdown-item" href="{% url 'lista_OS' %}">Listado</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Edición</a>
+                        </div>
+                      </li>
+                  <li class="nav-item">
+                    <a class="nav-link btn btn-primary" href="#">Readme</a>
+                  </li>
+              
+                </ul>
+ 
+              </div>
+            </div>
+          </nav>
+        <!-- Masthead-->
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+            </symbol>
+            <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+            </symbol>
+            <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </symbol>
+          </svg>
+        <header class="masthead">
+            <div class="container position-relative">
+                <div class="row justify-content-right">
+              
+                        <div class="text-right text-white">
+                          
+        {% block contenido %}
+        <div class="container position-relative">
+          <div class="row justify-content-center">
+              <div class="col-xl-6">
+                  <div class="text-center text-white">
+                      <!-- Page heading-->
+                      <h1 class="mb-5">Bienvenido a la App de Salud</h1>
+                      <!-- Signup form-->
+                      <!-- * * * * * * * * * * * * * * *-->
+                      <!-- * * SB Forms Contact Form * *-->
+                      <!-- * * * * * * * * * * * * * * *-->
+                      <!-- This form is pre-integrated with SB Forms.-->
+                      <!-- To make this form functional, sign up at-->
+                      <!-- https://startbootstrap.com/solution/contact-forms-->
+                      <!-- to get an API token!-->
+
+                  </div>
+              </div>
+          </div>
+      </div>
+
+        {% endblock %}
+
+                        </div>
+                    
+                </div>
+            </div>
+        </header>
+
+ 
+        <!-- Footer-->
+        <footer class="footer bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+                        <ul class="list-inline mb-2">
+                            <li class="list-inline-item"><a href="#!">About</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a href="#!">Contact</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
+                        </ul>
+                        <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2022. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item me-4">
+                                <a href="#!"><i class="bi-facebook fs-3"></i></a>
+                            </li>
+                            <li class="list-inline-item me-4">
+                                <a href="#!"><i class="bi-twitter fs-3"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!"><i class="bi-instagram fs-3"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        {% if messages %}
+        {% for m in messages %}
+            <script>
+                Swal.fire({
+                  "title":"Felicitaciones",
+                  "text":"{{m}}",
+                  "icon":"success",
+                  "confirmButtonText":"Aceptar"
+                })
+            </script>
+        {% endfor %}
+        {% endif %}
+    </body>
+</html>

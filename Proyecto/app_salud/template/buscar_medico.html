@@ -1,0 +1,35 @@
+{% extends "principal.html" %}
+
+{% load static %}
+
+{% block contenido %}
+    <h4 class="text-dark bg-warning"> Buscar Médicos </h4>
+    <form action="buscar_medico" method="GET">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control text-uppercase" placeholder="Puede buscar por Profesional, N° de Matricula o Especialidad" aria-label="Recipient's username" aria-describedby="button-addon2" name="buscar">
+            <button class="btn btn-outline-dark fw-bold" type="submit" >Buscar</button>
+          </div>
+
+    </form>
+    <table  class="table table-dark table-striped">
+        <thead>
+          <tr >
+            <th scope="col">Profesional</th>
+            <th scope="col">N° de M.P.</th>
+            <th scope="col">Especialidad</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for n in medicos %}
+          <tr class="text-uppercase">
+            <td>{{n.profesional}} </td>
+            <th scope="row">{{n.mp}} </th>
+            <td>{{n.especialidad}} </td>
+          </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+      <div>
+        {% include 'paginator.html' %}
+    </div>
+{% endblock %}

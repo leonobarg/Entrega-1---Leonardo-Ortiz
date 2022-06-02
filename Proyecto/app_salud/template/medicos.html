@@ -1,0 +1,41 @@
+{% extends "principal.html" %}
+
+{% load static %} 
+
+
+{% block contenido %} 
+
+
+<h4 class="text-dark bg-warning"> Cargar Medicos </h4>
+  <form action="alta_medico" method="POST" class="row">
+    {% csrf_token %} 
+    <div class="form-group col-lg-6">
+    <div class="input-group input-group-sm mb-3">
+      <span class="input-group-text fw-bold" id="inputGroup-sizing-sm">Apellido y Nombre de Profesinal</span>
+      <input type="text" class="form-control text-uppercase" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="profesional" required>
+    </div>
+  </div>
+  <div class="form-group col-lg-6">
+    <div class="input-group input-group-sm mb-3 ">
+      <span class="input-group-text fw-bold" id="inputGroup-sizing-sm">N° de M.P.</span>
+      <input type="text" class="form-control text-uppercase" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="mp" required>
+    </div>
+  </div>
+  <div class="form-group col-lg-4">
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text fw-bold" id="inputGroup-sizing-sm">Especialidad</span>
+        <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="especialidad">
+            <option selected>Seleccione especialidad</option>
+            <option value="Pediatria">Pediatria</option>
+            <option value="Clinico">Clinico</option>
+            <option value="Cardiologia">Cardiologia</option>
+          </select>
+    </div>
+    </div>
+    
+    <div class="input-group input-group-sm mb-3">
+    <input type="submit" class="btn btn-danger" value="Guardar">
+      </div>
+  </form>
+
+{% endblock %} 

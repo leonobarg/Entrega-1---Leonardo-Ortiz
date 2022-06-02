@@ -1,0 +1,34 @@
+{% extends "principal.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+    
+    <h4 class="text-danger bg-info"> Listado de Obras Sociales </h4>
+    <table  class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Obra Social</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Email</th>
+            <th scope="col">N° CUIT</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for n in entity %}
+          <tr class="text-uppercase">
+            <th scope="row">{{n.nombre}} </th>
+            <td>{{n.direccion}} </td>
+            <td>{{n.email}} </td>
+            <td>{{n.cuit}} </td>
+          </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+      <div>
+          {% include 'paginator.html' %}
+      </div>
+
+
+{% endblock %}
